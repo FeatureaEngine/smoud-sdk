@@ -40,6 +40,7 @@ declare const NUC: {
   };
 };
 
+declare const ScPlayableAd: { onCTAClick: () => void };
 declare const FbPlayableAd: { onCTAClick: () => void };
 declare const smxTracking: { redirect: () => void };
 declare const ExitApi: { exit: () => void };

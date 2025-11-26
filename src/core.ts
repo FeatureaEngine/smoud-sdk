@@ -9,7 +9,8 @@ import {
   isMintegral,
   isFacebook,
   isTikTok,
-  isSmadex
+  isSmadex,
+  isSnapchat
 } from './protocols';
 import { initTrackingProtocols } from './tracking';
 
@@ -472,6 +473,8 @@ class sdk {
       NUC.trigger.convert(destinationUrl);
     } else if ('facebook' == AD_NETWORK && isFacebook()) {
       FbPlayableAd.onCTAClick();
+    } else if ('snapchat' == AD_NETWORK && isSnapchat()) {
+      ScPlayableAd.onCTAClick();
     } else if ('smadex' == AD_NETWORK && isSmadex()) {
       smxTracking.redirect();
     } else if ('vungle' == AD_NETWORK) {

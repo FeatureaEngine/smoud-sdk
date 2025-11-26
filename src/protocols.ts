@@ -10,6 +10,7 @@ const MINTEGRAL = uid++;
 const TAPJOY = uid++;
 const TIKTOK = uid++;
 const SMADEX = uid++;
+const SNAPCHAT = uid++;
 
 let actualProtocol = NONE;
 
@@ -49,6 +50,10 @@ export function isTikTok(): boolean {
   return actualProtocol === TIKTOK;
 }
 
+export function isSnapchat(): boolean {
+  return actualProtocol === SNAPCHAT;
+}
+
 export function ensureProtocol(): void {
   if ('mraid' === AD_PROTOCOL) {
     try {
@@ -77,6 +82,10 @@ export function ensureProtocol(): void {
   } else if ('smadex' === AD_NETWORK) {
     try {
       if (smxTracking) actualProtocol = SMADEX;
+    } catch (error) {}
+  } else if ('snapchat' === AD_NETWORK) {
+    try {
+      if (ScPlayableAd) actualProtocol = SNAPCHAT;
     } catch (error) {}
   }
 }
