@@ -471,7 +471,7 @@ class sdk {
       dapi.openStoreUrl();
     } else if ('nucleo' === AD_PROTOCOL && isNucleo()) {
       NUC.trigger.convert(destinationUrl);
-    } else if ('facebook' == AD_NETWORK && isFacebook()) {
+    } else if (('facebook' === AD_NETWORK || 'moloco' === AD_NETWORK || 'mytarget' === AD_NETWORK) && isFacebook()) {
       FbPlayableAd.onCTAClick();
     } else if ('snapchat' == AD_NETWORK && isSnapchat()) {
       ScPlayableAd.onCTAClick();
@@ -485,7 +485,7 @@ class sdk {
       window.install && window.install();
     } else if ('tapjoy' === AD_NETWORK && isTapjoy()) {
       window.TJ_API.click();
-    } else if ('tiktok' === AD_NETWORK && isTikTok()) {
+    } else if (('tiktok' === AD_NETWORK || 'pangle' === AD_NETWORK) && isTikTok()) {
       window.openAppStore();
     } else {
       window.open(destinationUrl);

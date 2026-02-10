@@ -65,7 +65,7 @@ export function ensureProtocol(): void {
       dapi.isReady();
       actualProtocol = DAPI;
     } catch (error) {}
-  } else if ('facebook' === AD_NETWORK) {
+  } else if ('facebook' === AD_NETWORK || 'moloco' === AD_NETWORK || 'mytarget' === AD_NETWORK) {
     try {
       if (FbPlayableAd) actualProtocol = FACEBOOK;
     } catch (error) {}
@@ -77,7 +77,7 @@ export function ensureProtocol(): void {
     if (window.gameReady) actualProtocol = MINTEGRAL;
   } else if ('tapjoy' === AD_NETWORK) {
     if (window.TJ_API) actualProtocol = TAPJOY;
-  } else if ('tiktok' === AD_NETWORK) {
+  } else if ('tiktok' === AD_NETWORK || 'pangle' === AD_NETWORK) {
     if (window.openAppStore) actualProtocol = TIKTOK;
   } else if ('smadex' === AD_NETWORK) {
     try {
